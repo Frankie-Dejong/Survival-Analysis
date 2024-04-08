@@ -1,0 +1,32 @@
+
+# paths
+original_data_path: ../dataset/TCGA/origin
+processed_data_path: ../dataset/TCGA/processed
+tile_path: ../dataset/TCGA/tiles
+norm_path: ../dataset/TCGA/norms
+feature_path: ../dataset/TCGA/features_lowres
+TCGA_COAD_survival_info_path: ../dataset/TCGA/survival/TCGA-COAD.survival.tsv
+TCGA_READ_survival_info_path: ../dataset/TCGA/survival/TCGA-READ.survival.tsv
+format_info_path: ../dataset/TCGA/metadata.json
+model_save_path: ../models/
+anno_path: ../dataset/TCGA/survival/
+
+device: cuda:0
+
+# tile parameters
+resolution_level: 0
+overlapping_percentage: 0
+window_size: 512
+
+# normalize parameters
+io: 240
+alpha: 1
+beta: 0.15
+filter_size: 65536
+
+# train parameters
+pack_size: 4
+pack_num: 500
+epochs: 1000
+lr: 0.001
+weight_decay: 0.0001
