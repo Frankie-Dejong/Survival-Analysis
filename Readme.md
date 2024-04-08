@@ -65,6 +65,13 @@ To pretrain our cnn model for feature extraction, run
 ```
 python pretrain/train.py
 ```
+
+### Extract Features
+
+After pretraining, to extract features from TCGA slides, run
+```
+python data_preprocessing/main.py
+```
 ## Train
 To train our model for survival prediction, run
 ```

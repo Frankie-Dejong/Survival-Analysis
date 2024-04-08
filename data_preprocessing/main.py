@@ -16,7 +16,7 @@ from normalization import *
 from extraction import load_tsv
 import pandas as pd
 
-def get_model(hidden_channels=32, path='./runs/04-07-16-07/70/model.pt'):
+def get_model(hidden_channels=32, path='YOUR PATH'):
     model = EncDec(hidden_channels=hidden_channels)
     state_dict = torch.load(path)
     model.load_state_dict(state_dict=state_dict, strict=True)
