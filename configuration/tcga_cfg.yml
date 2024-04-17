@@ -13,20 +13,3 @@ anno_path: ../dataset/TCGA/survival/
 
 device: cuda:0
 
-# tile parameters
-resolution_level: 0
-overlapping_percentage: 0
-window_size: 512
-
-# normalize parameters
-io: 240
-alpha: 1
-beta: 0.15
-filter_size: 65536
-
-# train parameters
-pack_size: 4
-pack_num: 500
-epochs: 1000
-lr: 0.001
-weight_decay: 0.0001

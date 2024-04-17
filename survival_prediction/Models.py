@@ -42,7 +42,7 @@ class AttnPooling(nn.Module):
 
 
 
-class LastSigmoid(nn.Module):
+class Embedder(nn.Module):
     def __init__(self, input_dim=2048, output_dim=5):
         super().__init__()
         self.input_dim = input_dim
@@ -75,28 +75,16 @@ class CancerPredictModel(nn.Module):
         self.pooling = AttnPooling(
             L, D, K
         )
-        self.get_alpha = LastSigmoid(
+        self.get_alpha = Embedder(
             D, output_dim
         )
-        self.get_beta = LastSigmoid(
+        self.get_beta = Embedder(
             D, output_dim
         )
         
-        # self.dense = nn.Linear(D, D)
-        # self.transformerEncoderLayer = nn.TransformerEncoderLayer(2048, 8, dim_feedforward=1024, dropout=0.2)
-        # self.transformerEncoder = nn.TransformerEncoder(self.transformerEncoderLayer, 2)
-        # self.norm1 = nn.LayerNorm(2048)
-        # self.FFN1 = FFN(D, D, D)
-        # self.FFN2 = FFN(D, D, D)
     
     def forward(self, x):
-        # x = self.norm1(x)
-        # x = self.transformerEncoder(x)
-        # x = self.FFN(x)
-        # x = self.dense(x)
         x = self.pooling(x)
-        # x1 = self.FFN1(x)
-        # x2 = self.FFN2(x)
         alpha = self.get_alpha(x)
         beta = self.get_beta(x)
         return alpha, beta

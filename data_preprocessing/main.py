@@ -39,8 +39,8 @@ def get_data(cfg):
     return samples_data
 
 def main(
-    feat_save_path='../dataset/TCGA/features_lowres',
-    cfg_path="configuration/tcga_cfg.yml",
+    feat_save_path,
+    cfg_path=,
     io : int=240,
     alpha : int=1, 
     beta : float=0.15,
