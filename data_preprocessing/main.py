@@ -40,7 +40,7 @@ def get_data(cfg):
 
 def main(
     feat_save_path,
-    cfg_path=,
+    cfg_path,
     io : int=240,
     alpha : int=1, 
     beta : float=0.15,
